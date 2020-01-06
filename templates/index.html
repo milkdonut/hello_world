@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" novalidate>
+    {% csrf_token %}
+    {{ test_form.as_p }}
+    <input type="submit" value="submit"/>
+</form>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <td>name</td>
+            <td>age</td>
+            <td>email</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for foo in list_all %}
+            <tr>
+                <td>{{ foo.name }}</td>
+                <td>{{ foo.age }}</td>
+                <td>{{ foo.email }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+
+</body>
+</html>
